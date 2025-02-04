@@ -1,0 +1,14 @@
+services:
+  odoo:
+    image: odoo:17
+    container_name: odoo
+    restart: always
+    ports:
+      - "8069:8069"  # Expose port 8069
+    volumes:
+      - ./odoo_data:/var/lib/odoo
+    environment:
+      - HOST=192.168.10.191  # Replace with your external database host IP
+      - USER=odoo
+      - PASSWORD=odoo
+    user: odoo  # Use the username instead of UID:GID
