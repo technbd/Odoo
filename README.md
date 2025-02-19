@@ -116,6 +116,12 @@ npm install -g less less-plugin-clean-css
 
 
 #### RHEL 8 based systems:
+It looks like `wkhtmltopdf` is trying to use OpenSSL 1.1, but Rocky Linux (especially versions 9 and later) no longer includes OpenSSL 1.1 by default. Instead, it uses OpenSSL 3.
+
+```
+dnf install -y compat-openssl11
+```
+
 
 ```
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox-0.12.6.1-2.almalinux8.x86_64.rpm
